@@ -3,40 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taredfor <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ddelena <ddelena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/26 16:47:37 by taredfor          #+#    #+#             */
-/*   Updated: 2021/08/26 16:47:38 by taredfor         ###   ########.fr       */
+/*   Created: 2021/04/16 12:43:43 by ddelena           #+#    #+#             */
+/*   Updated: 2021/04/29 21:24:40 by ddelena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+int	ft_space(int c)
+{
+	return (c == ' ' || c == '\t' || c == '\f'
+		|| c == '\r' || c == '\n' || c == '\v');
+}
+
 int	ft_atoi(const char *str)
 {
-	unsigned int		i;
-	long				temp;
-	int					sign;
+	int		i;
+	int		j;
+	long	k;
 
+	k = 0;
 	i = 0;
-	sign = 1;
-	temp = 0;
-	while ((8 < str[i] && str[i] < 14) || str[i] == 32)
+	j = 1;
+	while (ft_space(str[i]))
 		i++;
+	if (str[i] == '-' )
+		j = -1;
 	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sign = -1;
 		i++;
-	}
-	while (47 < str[i] && str[i] < 58)
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		temp = temp * 10 + str[i] - '0';
-		i++;
-		if (temp > 2147483647 && sign == 1)
+		if (k > 2147483647 && j == 1)
 			return (-1);
-		if (temp > 2147483648 && sign == -1)
+		if (k < -2147483648)
 			return (0);
+		k = (k * 10) + (str[i] - '0');
+		i++;
 	}
-	return ((long)(temp * sign));
+	return (k * j);
 }

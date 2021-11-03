@@ -3,92 +3,73 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taredfor <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ddelena <ddelena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/26 16:50:53 by taredfor          #+#    #+#             */
-/*   Updated: 2021/08/26 16:50:54 by taredfor         ###   ########.fr       */
+/*   Created: 2021/04/23 16:39:30 by ddelena           #+#    #+#             */
+/*   Updated: 2021/11/03 17:01:07 by ddelena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdio.h>
+#include "libft.h"
 
-static char	**ft_free_mem(char **arr)
+static int	ft_count_words(const char *s, char c)
 {
-	unsigned int	i;
+	int	count;
 
-	i = 0;
-	while (arr[i])
+	count = 0;
+	if (s == NULL)
+		return (0);
+	if (*s != c)
+		count = 1;
+	while (*s)
 	{
-		free(arr[i]);
-		i++;
+		if (*s++ == c && *s != c)
+			count++;
 	}
-	free(arr);
-	return (0);
+	if (*(--s) == c)
+		count--;
+	return (count);
 }
 
-static int	ft_number_str(char const *s, char c)
+static char	**ft_spl(char **out, const char *s, char c)
 {
-	int	i;
-	int	num_slov;
+	int		i;
+	int		j;
 
-	i = 0;
-	num_slov = 0;
-	while (s[i])
+	j = 0;
+	while (*s)
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != c && (s[i]))
-			++num_slov;
-		while (s[i] != c && s[i])
-			i++;
+		while (*s && *s == c)
+			s++; 
+		i = 0;
+		while (*s && *s != c && i++ >= 0)
+			s++;
+		if (i == 0)
+			break ;
+		out[j] = malloc(i + 1);
+		s -= i;
+		i = 0;
+		while (*s && *s != c)
+			out[j][i++] = (char)*s++;
+		out[j++][i] = 0;
 	}
-	return (num_slov);
-}
-
-static	char	**ft_copy(char **arr, char const *s, char c, int k)
-{
-	int	i;
-	int	l;
-
-	i = 0;
-	while ((i < ft_number_str(s, c)) && (s[k]))
-	{
-		while (s[k] && s[k] == c)
-			k++;
-		l = 0;
-		while (s[k] != c && s[k])
-		{
-			l++;
-			k++;
-		}
-		arr[i] = malloc(sizeof(char) * (l + 1));
-		if (!arr[i])
-		{	
-			ft_free_mem(&arr[i]);
-			return (0);
-		}
-		ft_strlcpy(arr[i], s + k - l, l + 1);
-		i++;
-	}
-	arr[i] = NULL;
-	return (arr);
+    out[j] = 0;
+	return (out);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		k;
-	int		num_slov;
-	char	**mem;
+	char	**out;
 
-	i = 0;
-	k = 0;
-	if (!s)
-		return (0);
-	num_slov = ft_number_str(s, c);
-	mem = malloc(sizeof(char *) * (num_slov + 1));
-	if (!mem)
-		return (0);
-	return (ft_copy(mem, s, c, 0));
+	out = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	if (out == NULL)
+		return (NULL); 
+	if (s == NULL)
+	{
+		out[0] = "\0";
+		return (out);
+	}
+	out = ft_spl(out, s, c);
+	return (out);
 }

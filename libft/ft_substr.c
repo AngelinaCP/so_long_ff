@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taredfor <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ddelena <ddelena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/26 16:51:51 by taredfor          #+#    #+#             */
-/*   Updated: 2021/08/26 16:51:52 by taredfor         ###   ########.fr       */
+/*   Created: 2021/04/23 01:59:36 by ddelena           #+#    #+#             */
+/*   Updated: 2021/04/24 04:45:46 by ddelena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,25 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*mem;
-	size_t	i;
+	char		*d;
+	size_t		i;
+	size_t		j;
 
 	i = 0;
+	j = 0;
 	if (!s)
 		return (0);
-	if (ft_strlen(s) < start)
-		return (ft_strdup(""));
-	if (ft_strlen(s) < (start + len))
-		mem = malloc(sizeof(char) * ft_strlen(s) - start + 1);
-	else
-		mem = malloc(sizeof(char) * (len + 1));
-	if (!mem)
-		return (0);
-	while (*(s + start) && i < len)
+	d = (char *)malloc(sizeof(char) * (len + 1));
+	if (d == NULL)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		len = 0;
+	while (len > j)
 	{
-		mem[i++] = s[start++];
+		d[j] = (char)s[start];
+		start++;
+		j++;
 	}
-	mem[i] = '\0';
-	return (mem);
+	d[j] = '\0';
+	return (d);
 }

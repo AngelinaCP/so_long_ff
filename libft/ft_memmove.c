@@ -3,35 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taredfor <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ddelena <ddelena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/26 16:50:08 by taredfor          #+#    #+#             */
-/*   Updated: 2021/08/26 16:50:09 by taredfor         ###   ########.fr       */
+/*   Created: 2021/04/22 14:22:17 by ddelena           #+#    #+#             */
+/*   Updated: 2021/04/29 21:37:17 by ddelena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
+	char	*str1;
+	char	*str2;
 	size_t	i;
 
+	str1 = (char *)dst;
+	str2 = (char *)src;
 	i = 0;
-	if (src < dest)
+	if (str1 == NULL && str2 == NULL)
+		return (NULL);
+	if (src < dst)
 	{
 		while (len > 0)
 		{
-			*((char *)(dest + len - 1)) = *((char *)(src + len - 1));
+			str1[len - 1] = str2[len - 1];
 			len--;
 		}
 	}
-	if (src > dest)
+	else
 	{
-		while (i < len)
-		{
-			*((char *)(dest + i)) = *((char *)(src + i));
-			i++;
-		}
+		while (i++ < len)
+			*str1++ = *str2++;
 	}
-	return (dest);
+	return (dst);
 }

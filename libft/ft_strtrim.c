@@ -3,36 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taredfor <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ddelena <ddelena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/26 16:51:47 by taredfor          #+#    #+#             */
-/*   Updated: 2021/08/26 16:51:48 by taredfor         ###   ########.fr       */
+/*   Created: 2021/04/24 05:04:40 by ddelena           #+#    #+#             */
+/*   Updated: 2021/04/28 19:09:53 by ddelena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(const char *s1, const char *set)
+char	*find_chr(const char *s, int c)
 {
-	size_t		s;
-	size_t		f;
-	char		*str;
-	size_t		i;
-
-	if (!s1)
-		return (0);
-	f = ft_strlen (s1);
-	s = 0;
-	while (*(s1 + s) && ft_strchr(set, *(s1 + s)))
+	while (*s)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
 		s++;
-	while (ft_strchr(set, *(s1 + f - 1)) && f > s)
-		f--;
-	str = (char *)malloc(sizeof (char) * (f - s + 1));
-	if (!str)
-		return (0);
-	i = 0;
-	while (s < f)
-		*(str + i++) = *(s1 + s++);
-	str[i] = '\0';
+	}
+	if (c == 0)
+		return ((char *)s);
+	return (NULL);
+}
+
+char	*ft_strtrim (char const *s1, char const *set)
+{
+	char	*str;
+	size_t	j;
+
+	if (!s1 || !set)
+		return (NULL);
+	while (*s1 && find_chr(set, *s1))
+		s1++;
+	j = ft_strlen(s1);
+	while (j && find_chr(set, s1[j]))
+		j--;
+	str = ft_substr((char *)s1, 0, j + 1);
 	return (str);
 }

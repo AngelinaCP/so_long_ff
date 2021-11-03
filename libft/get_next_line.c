@@ -1,89 +1,74 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: taredfor <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/30 18:48:09 by taredfor          #+#    #+#             */
-/*   Updated: 2021/08/30 18:48:10 by taredfor         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
-
-static	int	ft_check(int fd, char **line, char **buffer)
+#define BUFFER_SIZE 1
+char	*next_line(char **start_l, char **line)
 {
-	if (read(fd, NULL, 0) < 0 || !line || BUFFER_SIZE < 0)
-		return (-1);
-	*buffer = (char *) malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buffer)
-		return (-1);
-	return (0);
-}
+	char		*ptr2;
 
-static	char	*ft_new_reminder(char **reminder, char **buffer)
-{
-	char	*new_reminder;
-
-	new_reminder = ft_strjoin(*reminder, *buffer);
-	free(*reminder);
-	*reminder = new_reminder;
-	return (*reminder);
-}
-
-static	int	ft_reminder(char **reminder, char **line, int n)
-{
-	char	*new_str;
-	char	*new_line;
-
-	new_line = NULL;
-	new_str = NULL;
-	if (ft_strchr(*reminder, '\n'))
+	ptr2 = NULL;
+	if (*start_l)
 	{
-		new_str = ft_strchr(*reminder, '\n');
-		*line = ft_strndup(*reminder, (new_str - (*reminder)));
-		new_line = ft_strndup((new_str + 1), ft_strlen(new_str + 1));
-		free(*reminder);
-		*reminder = new_line;
-		return (1);
+		ptr2 = ft_strchr(*start_l, '\n');
+		if (ptr2)
+		{
+			*ptr2 = '\0';
+			ptr2++;
+			*line = ft_strdup(*start_l);
+			ft_strcpy(*start_l, ptr2);
+		}
+		else
+		{
+			*line = ft_strdup(*start_l);
+			free(*start_l);
+			start_l = NULL;
+		}
 	}
 	else
+		*line = ((char *)malloc((BUFFER_SIZE + 1) * sizeof(char)));
+	return (ptr2);
+}
+
+char	*find_n(char **p, char **start_l, char **line, char *buf)
+{
+	char		*copy;
+
+	*p = ft_strchr(buf, '\n');
+	if (*p)
 	{
-		*line = ft_strndup(*reminder, ft_strlen(*reminder));
-		free(*reminder);
-		*reminder = NULL;
-		return (0);
+		**p = '\0';
+		*start_l = ft_strdup(++(*p));
 	}
-	if (n == 0 && (*reminder == NULL || (**reminder == '\0')))
-		return (0);
-	return (1);
+	copy = *line;
+	*line = ft_strjoin(*line, buf);
+	free(copy);
+	copy = NULL;
+	return (*p);
 }
 
 int	get_next_line(int fd, char **line)
 {
-	char		*buffer;
-	static char	*reminder;
-	size_t		n;
+	char		*buf;
+	int			count;
+	static char	*start_l;
+	char		*p;
 
-	if (ft_check(fd, line, &buffer) < 0)
+	if (fd < 0 || BUFFER_SIZE < 1 || !line || read(fd, 0, 0) < 0)
 		return (-1);
-	n = 1;
-	while (n > 0)
+	buf = (char *)malloc(sizeof(*buf) * (BUFFER_SIZE + 1));
+	p = next_line(&start_l, line);
+	count = 1;
+	while (!p && count != 0)
 	{
-		n = read(fd, buffer, BUFFER_SIZE);
-		buffer[n] = '\0';
-		if (reminder == NULL)
-		{
-			reminder = ft_strdup(buffer);
-			if (!reminder)
-				return (-1);
-		}
-		else
-			ft_new_reminder(&reminder, &buffer);
-		if (ft_strchr(reminder, '\n'))
-			break ;
+		count = read(fd, buf, BUFFER_SIZE);
+		if (count == -1)
+			return (-1);
+		buf[count] = '\0';
+		find_n(&p, &start_l, line, buf);
 	}
-	free(buffer);
-	return (ft_reminder(&reminder, line, n));
+	free(buf);
+	if (count == 0)
+	{
+		start_l = NULL;
+		return (0);
+	}
+	return (1);
 }

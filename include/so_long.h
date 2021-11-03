@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: taredfor <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/17 18:35:09 by taredfor          #+#    #+#             */
-/*   Updated: 2021/09/17 19:04:19 by taredfor         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
@@ -77,5 +66,6 @@ void	ft_moving(t_struct *map, int x, int y);
 void	ft_lets_moving(t_struct *map, int x, int y);
 int		ft_patrol_animation(t_struct *map);
 int		ft_close_x(t_struct *map);
+void	ft_error(char *str);
 
 #endif

@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taredfor <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ddelena <ddelena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/31 12:08:04 by taredfor          #+#    #+#             */
-/*   Updated: 2021/08/31 12:08:05 by taredfor         ###   ########.fr       */
+/*   Created: 2021/11/03 17:51:12 by ddelena           #+#    #+#             */
+/*   Updated: 2021/11/03 17:51:24 by ddelena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strndup(const char *str, size_t n)
+char	*ft_strcpy(char *dest, char *src)
 {
-	char	*mem;
-	size_t	i;
+	int	i;
 
-	mem = (char *)malloc(sizeof(char) * (n + 1));
-	if (!mem)
-		return (0);
 	i = 0;
-	while (i < n)
+	while (src[i] != '\0')
 	{
-		mem[i] = str[i];
+		dest[i] = src[i];
 		i++;
 	}
-	mem[i] = '\0';
-	return (mem);
+	dest[i] = '\0';
+	return (dest);
 }
