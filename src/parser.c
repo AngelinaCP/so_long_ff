@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parser.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddelena <ddelena@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/04 18:33:26 by ddelena           #+#    #+#             */
+/*   Updated: 2021/11/04 20:52:31 by ddelena          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-void	ft_width_map(char *str, t_struct *map)
+void	ft_width_map(char *str, t_map *map)
 {
 	int		i;
 	int		fd;
@@ -9,7 +20,7 @@ void	ft_width_map(char *str, t_struct *map)
 
 	fd = open(str, O_RDONLY);
 	if (fd < 0)
-		ft_error("nothing read");
+		ft_error("Can't open the map");
 	i = 1;
 	while (i == 1)
 	{
@@ -18,11 +29,11 @@ void	ft_width_map(char *str, t_struct *map)
 		map->width += 1;
 	}
 	if (i == -1)
-		ft_error("wasn't nothing read");
+		ft_error("Map is empty");
 	close(fd);
 }
 
-void	ft_map_parser(char *str, t_struct *map)
+void	ft_map_parser(char *str, t_map *map)
 {
 	int		fd;
 	int		i;
@@ -30,9 +41,10 @@ void	ft_map_parser(char *str, t_struct *map)
 	char	*line;
 
 	it = 0;
+	ft_width_map(str, map);
 	fd = open(str, O_RDONLY);
 	if (fd < 0)
-		ft_error("nothing read");
+		ft_error("Can't open the map");
 	i = 1;
 	map->str = ft_calloc(map->width + 1, sizeof(char *));
 	while (i == 1)
@@ -43,11 +55,11 @@ void	ft_map_parser(char *str, t_struct *map)
 		it++;
 	}
 	if (i == -1)
-		ft_error("GNL error");
+		ft_error("Map is empty");
 	close(fd);
 }
 
-void	structure_of_map(char *str, t_struct *map)
+void	structure_of_map(char *str, t_map *map)
 {
 	int	i;
 	int	ln;
@@ -57,7 +69,7 @@ void	structure_of_map(char *str, t_struct *map)
 	if (ln != map->len)
 		ft_error("Error: shape of the map");
 	if (str[0] != '1' || str[ln - 1] != '1')
-		ft_error("Error: Map extreme values error");
+		ft_error ("Error: Map isn't closed\n");
 	while (str[i])
 	{
 		if (str[i] == 'C')
@@ -66,40 +78,39 @@ void	structure_of_map(char *str, t_struct *map)
 			map->exit += 1;
 		else if (str[i] == 'P')
 			map->position += 1;
-		else if (str[i] == '1' || str[i] == '0' \
-			|| str[i] == 'D')
-			;
+		else if (str[i] == '1' || str[i] == '0'
+			|| str[i] == 'D');
 		else
 			ft_error("Error: incorrect symbols of the map");
 		i++;
 	}
 }
 
-void	first_and_last_str_of_map(t_struct *map)
+void	first_and_last_str_of_map(t_map *map)
 {
 	int	i;
 	int	ln;
 
 	ln = (int)ft_strlen(map->str[map->width - 1]);
 	if (ln != map->len)
-		ft_error("Error: shape of the map");
+		ft_error("Error: shape of the map\n");
 	i = 0;
 	while (map->str[0][i])
 	{
 		if (map->str[0][i] != '1')
-			ft_error("Error: incorrect symbols of the map");
+			ft_error("Error: Map isn't closed\n");
 		i++;
 	}
 	i = 0;
 	while (map->str[map->width - 1][i])
 	{
 		if (map->str[map->width - 1][i] != '1')
-			ft_error("Error: incorrect symbols last str of the map");
+			ft_error("Error: Map isn't closed\n");
 		i++;
 	}
 }
 
-void	map_validate(t_struct *map)
+void	map_validate(t_map *map)
 {
 	int	i;
 
@@ -112,7 +123,7 @@ void	map_validate(t_struct *map)
 		i++;
 	}
 	if (map->position != 1 || map->collect == 0 || map->exit == 0)
-		ft_error("Error: incorrect meaning Position or Collect or Exit");
+		ft_error("Error: Position or Collect or Exit");
 	if (map->width > 17 || map->len > 39)
-		ft_error("Error: reduce map parameters");
+		ft_error("Error: map is too big");
 }

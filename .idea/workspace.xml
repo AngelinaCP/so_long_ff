@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated>
-      <config projectName="so_long_air" targetName="so_long" />
-      <config projectName="so_long_air" targetName="all" />
-      <config projectName="so_long_air" targetName="re" />
-      <config projectName="so_long_air" targetName="fclean" />
-    </generated>
+    <generated />
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -18,16 +13,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9333a891-5cdf-47e5-a9c5-7400af256987" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/enemy.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/enemy.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/enemy_1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/enemy_1.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/enemy_2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/enemy_2.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ground.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/ground.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ground.xpm 2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/exitt.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/exitt.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/exitt2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/exitt2.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/tiger_down.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/tiger_down.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/tiger_left.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/tiger_left.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/tiger_right.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/tiger_right.xpm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/tiger_up.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/tiger_up.xpm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/so_long.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/so_long.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/libft/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_split.c" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_split.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/libft.h" beforeDir="false" afterPath="$PROJECT_DIR$/libft/libft.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/so_long" beforeDir="false" afterPath="$PROJECT_DIR$/so_long" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.ber" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.ber" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mapping.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapping.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/move.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/move.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/so_long.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/so_long.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/so_long.c" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,14 +58,14 @@
         <entry>
           <key>
             <ExternalProjectPojo>
-              <option name="name" value="so_long_air" />
+              <option name="name" value="so_long" />
               <option name="path" value="$PROJECT_DIR$" />
             </ExternalProjectPojo>
           </key>
           <value>
             <list>
               <ExternalProjectPojo>
-                <option name="name" value="so_long_air" />
+                <option name="name" value="so_long" />
                 <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
             </list>
@@ -86,31 +92,22 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager" selected="Makefile Application.all">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sounds" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="all" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long_air" TARGET_NAME="all" CONFIG_NAME="all" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="fclean" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long_air" TARGET_NAME="fclean" CONFIG_NAME="fclean" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="re" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long_air" TARGET_NAME="re" CONFIG_NAME="re" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="so_long" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long_air" TARGET_NAME="so_long" CONFIG_NAME="so_long" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
@@ -118,12 +115,6 @@
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Makefile Application.all" />
-      <item itemvalue="Makefile Application.fclean" />
-      <item itemvalue="Makefile Application.re" />
-      <item itemvalue="Makefile Application.so_long" />
-    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -134,7 +125,15 @@
       <option name="presentableId" value="Default" />
       <updated>1635951231717</updated>
       <workItem from="1635951234417" duration="7000" />
+      <workItem from="1635959352368" duration="9268000" />
+      <workItem from="1636020453329" duration="3539000" />
+      <workItem from="1636036060660" duration="621000" />
+      <workItem from="1636037278310" duration="1004000" />
+      <workItem from="1636044510490" duration="1059000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

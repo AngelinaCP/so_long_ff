@@ -1,9 +1,10 @@
+
 NAME		=	so_long
 
 SRCS_FILES	=	${shell find ./src -name "*.c"}
 
 SRCS		=	${SRCS_FILES}
-OBJS		=	$(patsubst %.c,%.o,$(SRCS))
+OBJS		=	${SRCS:.c=.o}
 
 LIB_DIR		=	libft
 MlX_DIR		=	mlx
@@ -23,7 +24,6 @@ $(NAME):	$(OBJS)
 				@make -C $(LIB_DIR)
 				@$(CC) $(CFLAGS) $(MLX_FLAGS) $(INC) $(LIB_DIR)/libft.a $(OBJS) -o $(NAME)
 				@clear
-				@echo "All done! you can play"
 
 clean:
 				@make clean -C $(LIB_DIR)

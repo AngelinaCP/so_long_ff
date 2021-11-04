@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddelena <ddelena@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/04 17:54:43 by ddelena           #+#    #+#             */
+/*   Updated: 2021/11/04 20:52:31 by ddelena          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/so_long.h"
 
 void	ft_error(char *str)
@@ -13,7 +25,7 @@ char	*check_for_image(char *str)
 	return (str);
 }
 
-void	ft_init_map(t_struct *map)
+void	ft_init_map(t_map *map)
 {
 	map->len = 0;
 	map->width = 0;
@@ -25,18 +37,18 @@ void	ft_init_map(t_struct *map)
 	map->steps = 0;
 	map->time = 0;
 	map->frame = 0;
-	map->img_solders = check_for_image("./images/tiger_right.xpm");
+	map->img_enem = check_for_image("./images/tiger_right.xpm");
 	map->img_wall = check_for_image("./images/border.xpm");
 	map->img_grass = check_for_image("./images/grass.xpm");
 	map->img_earth = check_for_image("./images/ground.xpm");
 	map->img_collect = check_for_image("./images/enemy.xpm");
-	map->img_helic_c = check_for_image("./images/helic_c.xpm");
-	map->img_helic_o = check_for_image("./images/helic_o.xpm");
+	map->img_exitt = check_for_image("./images/helic_c.xpm");
+	map->img_exitt2 = check_for_image("./images/helic_o.xpm");
 	map->img_enemy = check_for_image("./images/enemy_1.xpm");
 	map->img_enemy_2 = check_for_image("./images/enemy_2.xpm");
 }
 
-int	ft_patrol_animation(t_struct *map)
+int	ft_patrol_animation(t_map *map)
 {
 	int	w;
 	int	l;
@@ -65,7 +77,7 @@ int	ft_patrol_animation(t_struct *map)
 	return (0);
 }
 
-int	ft_close_x(t_struct *map)
+int	ft_close_x(t_map *map)
 {
 	mlx_destroy_window(map->mlx, map->new_window);
 	ft_putendl_fd("You closed window", 1);
