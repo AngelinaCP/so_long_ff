@@ -25,7 +25,7 @@ char	*check_for_image(char *str)
 	return (str);
 }
 
-void	ft_init_map(t_map *map)
+void	ft_init_map(t_struct *map)
 {
 	map->len = 0;
 	map->width = 0;
@@ -48,7 +48,7 @@ void	ft_init_map(t_map *map)
 	map->img_enemy_2 = check_for_image("./images/enemy_2.xpm");
 }
 
-int	ft_patrol_animation(t_map *map)
+int	ft_patrol_animation(t_struct *map)
 {
 	int	w;
 	int	l;
@@ -77,7 +77,7 @@ int	ft_patrol_animation(t_map *map)
 	return (0);
 }
 
-int	ft_close_x(t_map *map)
+int	ft_close_x(t_struct *map)
 {
 	mlx_destroy_window(map->mlx, map->new_window);
 	ft_putendl_fd("You closed window", 1);

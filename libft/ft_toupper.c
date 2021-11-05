@@ -6,13 +6,13 @@
 /*   By: ddelena <ddelena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:38:31 by ddelena           #+#    #+#             */
-/*   Updated: 2021/04/28 01:48:50 by ddelena          ###   ########.fr       */
+/*   Updated: 2021/11/05 22:28:21 by ddelena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int 	ft_toupper(int s)
+int	ft_toupper(int s)
 {
 	if (s >= 97 && s <= 122)
 		return (s - 32);

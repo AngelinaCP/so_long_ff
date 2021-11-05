@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddelena <ddelena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 17:54:11 by ddelena           #+#    #+#             */
-/*   Updated: 2021/11/04 20:52:31 by ddelena          ###   ########.fr       */
+/*   Created: 2021/11/05 22:26:13 by ddelena           #+#    #+#             */
+/*   Updated: 2021/11/05 22:26:14 by ddelena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	check_arg(int argc, char **argv)
 		ft_error("Wrong argument\n");
 }
 
-void	ft_init_game(t_map *map)
+void	ft_init_game(t_struct *map)
 {
 	map->mlx = mlx_init();
 	map->new_window = mlx_new_window(map->mlx, map->len * 64, \
@@ -39,7 +39,7 @@ void	ft_init_game(t_map *map)
 
 int	main(int argc, char **argv)
 {
-	t_map	map;
+	t_struct	map;
 
 	ft_init_map(&map);
 	check_arg(argc, argv);

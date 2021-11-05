@@ -6,7 +6,7 @@
 /*   By: ddelena <ddelena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 13:47:33 by ddelena           #+#    #+#             */
-/*   Updated: 2021/11/03 17:51:32 by ddelena          ###   ########.fr       */
+/*   Updated: 2021/11/05 22:28:54 by ddelena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ft_putendl_fd(char *s, int fd);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strtrim (char const *s1, char const *set);
+char	*ft_strtrim(char const *s1, char const *set);
 void	ft_putnbr_fd(int n, int fd);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);

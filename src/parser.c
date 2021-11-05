@@ -12,7 +12,7 @@
 
 #include "../include/so_long.h"
 
-void	ft_width_map(char *str, t_map *map)
+void	ft_width_map(char *str, t_struct *map)
 {
 	int		i;
 	int		fd;
@@ -33,7 +33,7 @@ void	ft_width_map(char *str, t_map *map)
 	close(fd);
 }
 
-void	ft_map_parser(char *str, t_map *map)
+void	ft_map_parser(char *str, t_struct *map)
 {
 	int		fd;
 	int		i;
@@ -59,7 +59,7 @@ void	ft_map_parser(char *str, t_map *map)
 	close(fd);
 }
 
-void	structure_of_map(char *str, t_map *map)
+void	structure_of_map(char *str, t_struct *map)
 {
 	int	i;
 	int	ln;
@@ -86,7 +86,7 @@ void	structure_of_map(char *str, t_map *map)
 	}
 }
 
-void	first_and_last_str_of_map(t_map *map)
+void	first_and_last_str_of_map(t_struct *map)
 {
 	int	i;
 	int	ln;
@@ -110,7 +110,7 @@ void	first_and_last_str_of_map(t_map *map)
 	}
 }
 
-void	map_validate(t_map *map)
+void	map_validate(t_struct *map)
 {
 	int	i;
 

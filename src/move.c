@@ -12,7 +12,7 @@
 
 #include "../include/so_long.h"
 
-void	ft_step_printer(t_map *map)
+void	ft_step_printer(t_struct *map)
 {
 	char	*str;
 
@@ -26,7 +26,7 @@ void	ft_step_printer(t_map *map)
 	free(str);
 }
 
-int	ft_close(t_map *map, char mes_code)
+int	ft_close(t_struct *map, char mes_code)
 {
 	int	res;
 
@@ -49,7 +49,7 @@ int	ft_close(t_map *map, char mes_code)
 	exit(EXIT_SUCCESS);
 }
 
-void	ft_moving(t_map *map, int x, int y)
+void	ft_moving(t_struct *map, int x, int y)
 {
 	map->str[map->pos_y][map->pos_x] = '0';
 	ft_put_image('0', map, map->pos_y, map->pos_x);
@@ -59,7 +59,7 @@ void	ft_moving(t_map *map, int x, int y)
 	ft_step_printer(map);
 }
 
-void	ft_lets_moving(t_map *map, int x, int y)
+void	ft_lets_moving(t_struct *map, int x, int y)
 {
 	int	res;
 
@@ -86,7 +86,7 @@ void	ft_lets_moving(t_map *map, int x, int y)
 		ft_moving(map, x, y);
 }
 
-int	key_h(int key_code, t_map *map)
+int	key_h(int key_code, t_struct *map)
 {
 	if (key_code == 13)
 		ft_lets_moving(map, 0, -1);

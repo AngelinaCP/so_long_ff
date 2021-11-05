@@ -6,11 +6,10 @@
 /*   By: ddelena <ddelena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 16:39:30 by ddelena           #+#    #+#             */
-/*   Updated: 2021/11/03 17:01:07 by ddelena          ###   ########.fr       */
+/*   Updated: 2021/11/05 22:27:13 by ddelena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 static int	ft_count_words(const char *s, char c)
@@ -41,7 +40,7 @@ static char	**ft_spl(char **out, const char *s, char c)
 	while (*s)
 	{
 		while (*s && *s == c)
-			s++; 
+			s++;
 		i = 0;
 		while (*s && *s != c && i++ >= 0)
 			s++;
@@ -54,7 +53,7 @@ static char	**ft_spl(char **out, const char *s, char c)
 			out[j][i++] = (char)*s++;
 		out[j++][i] = 0;
 	}
-    out[j] = 0;
+	out[j] = 0;
 	return (out);
 }
 
@@ -64,7 +63,7 @@ char	**ft_split(char const *s, char c)
 
 	out = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
 	if (out == NULL)
-		return (NULL); 
+		return (NULL);
 	if (s == NULL)
 	{
 		out[0] = "\0";

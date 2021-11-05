@@ -14,26 +14,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9333a891-5cdf-47e5-a9c5-7400af256987" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemy.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/enemy.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemy_1.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/enemy_1.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/enemy_2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/enemy_2.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/ground.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/ground.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/ground.xpm 2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/exitt.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/exitt.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/exitt2.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/exitt2.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/tiger_down.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/tiger_down.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/tiger_left.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/tiger_left.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/tiger_right.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/tiger_right.xpm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/tiger_up.xpm" beforeDir="false" afterPath="$PROJECT_DIR$/images/tiger_up.xpm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/so_long.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/so_long.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/so_long" beforeDir="false" afterPath="$PROJECT_DIR$/so_long" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.ber" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.ber" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mapping.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapping.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/move.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/move.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/so_long.c" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +36,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MakefileLocalSettings">
     <option name="availableProjects">
@@ -110,11 +103,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -130,6 +118,8 @@
       <workItem from="1636036060660" duration="621000" />
       <workItem from="1636037278310" duration="1004000" />
       <workItem from="1636044510490" duration="1059000" />
+      <workItem from="1636134964846" duration="203000" />
+      <workItem from="1636139351028" duration="892000" />
     </task>
     <servers />
   </component>
